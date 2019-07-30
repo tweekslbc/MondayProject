@@ -67,6 +67,9 @@
 
       removeRow.addEventListener('click', ev => {
         ev.preventDefault();
+
+        let divList = document.getElementById('#grid div');
+        divList.removeChild(divList.childNodes[0]);
       })
 
 
