@@ -2,13 +2,14 @@
   <head>
     <style>
       #grid {
-        display: flex;
+        display: grid;
         border: 1px solid  black;
 
 
 
       }
-      #grid > div{
+      #grid > div{ /* row */
+
         border: 1px solid  black;
         height: 40px;
         width: auto;
@@ -25,7 +26,9 @@
       <button id='removeCol'>Remove Column</button>
     </form>
     <div id='grid'>
+      <div class='row'>
 
+      </div>
 
     </div>
 
@@ -36,17 +39,20 @@
       const addCol = document.querySelector('#addCol');
       const removeCol = document.querySelector('#removeCol');
       const grid = document.querySelector('#grid');
+      const row = document.querySelector('.row');
 
 
       // build grid
       let rowsNumber = 0;
+
       addRow.addEventListener('click', ev => {
-        ev.preventDefault()
+        ev.preventDefault();
         let div = document.createElement('div');
         div.innerHTML = 'Hi';
         rowsNumber++;
         grid.style.gridTemplateRows = `repeat(${rowsNumber}, 1fr)`;
         grid.append(div);
+
       })
 
       let columnNumber = 0;
@@ -56,7 +62,7 @@
         div2.innerHTML = 'bye';
         columnNumber++;
         grid.style.gridTemplateColumns = `repeat(${columnNumber}, 1fr)`;
-        grid.append(div2);
+        row.append(div2);
       })
 
 
