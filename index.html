@@ -1,14 +1,15 @@
 <html>
   <head>
     <style>
-      .grid {
+      #grid {
         display: grid;
-
+        border: 1px solid  black;
       }
-      .grid > div{
-        border: solid 3px black;
+      #grid > div{
+        border: 1px solid  black;
         height: 40px;
         width: 40px;
+        /* background-color: black; */
       }
       </style>
   </head>
@@ -21,12 +22,10 @@
       <button id='removeCol'>Remove Column</button>
     </form>
     <div id='grid'>
-      <div class='row'>
-        <div class='col'>
 
-        </div>
-      </div>
+
     </div>
+
 
     <script>
       const addRow = document.querySelector('#addRow');
@@ -39,6 +38,7 @@
       // build grid
       let rowsNumber = 0;
       addRow.addEventListener('click', ev => {
+        ev.preventDefault()
         let div = document.createElement('div');
         div.innerHTML = 'Hi';
         rowsNumber++;
