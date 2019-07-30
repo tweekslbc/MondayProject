@@ -26,11 +26,11 @@
       <button id='removeCol'>Remove Column</button>
     </form>
     <div id='grid'>
-      <div class='row'>
 
-      </div>
 
     </div>
+
+
 
 
     <script>
@@ -39,7 +39,7 @@
       const addCol = document.querySelector('#addCol');
       const removeCol = document.querySelector('#removeCol');
       const grid = document.querySelector('#grid');
-      const row = document.querySelector('.row');
+
 
 
       // build grid
@@ -62,7 +62,11 @@
         div2.innerHTML = 'bye';
         columnNumber++;
         grid.style.gridTemplateColumns = `repeat(${columnNumber}, 1fr)`;
-        row.append(div2);
+        grid.append(div2);
+      })
+
+      removeRow.addEventListener('click', ev => {
+        ev.preventDefault();
       })
 
 
