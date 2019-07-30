@@ -2,13 +2,16 @@
   <head>
     <style>
       #grid {
-        display: grid;
+        display: flex;
         border: 1px solid  black;
+
+
+
       }
       #grid > div{
         border: 1px solid  black;
         height: 40px;
-        width: 40px;
+        width: auto;
         /* background-color: black; */
       }
       </style>
@@ -47,7 +50,7 @@
       })
 
       let columnNumber = 0;
-      addCol.addEventListener('click', ev =>{
+      addCol.addEventListener ('click', ev => {
         ev.preventDefault();
         let div2 = document.createElement('div');
         div2.innerHTML = 'bye';
