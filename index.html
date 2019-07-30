@@ -46,6 +46,18 @@
         grid.append(div);
       })
 
+      let columnNumber = 0;
+      addCol.addEventListener('click', ev =>{
+        ev.preventDefault();
+        let div2 = document.createElement('div');
+        div2.innerHTML = 'bye';
+        columnNumber++;
+        grid.style.gridTemplateColumns = `repeat(${columnNumber}, 1fr)`;
+        grid.append(div2);
+      })
+
+
+
     </script>
   </body>
 </html>
