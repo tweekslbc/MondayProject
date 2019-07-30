@@ -1,18 +1,31 @@
 <html>
   <head>
     <style>
+      .grid {
+        display: grid;
+
+      }
+      .grid > div{
+        border: solid 3px black;
+        height: 40px;
+        width: 40px;
+      }
       </style>
   </head>
   <body>
     <h1>Acme Pixels</h1>
     <form>
-      <button id='addRow'></button>
-      <button id='removeRow'></button>
-      <button id='addCol'></button>
-      <button id='removeCol'></button>
+      <button id='addRow'>Add a Row</button>
+      <button id='removeRow'>Remove Row</button>
+      <button id='addCol'>Add a Column</button>
+      <button id='removeCol'>Remove Column</button>
     </form>
     <div id='grid'>
+      <div class='row'>
+        <div class='col'>
 
+        </div>
+      </div>
     </div>
 
     <script>
@@ -21,6 +34,17 @@
       const addCol = document.querySelector('#addCol');
       const removeCol = document.querySelector('#removeCol');
       const grid = document.querySelector('#grid');
+
+
+      // build grid
+      let rowsNumber = 0;
+      addRow.addEventListener('click', ev => {
+        let div = document.createElement('div');
+        div.innerHTML = 'Hi';
+        rowsNumber++;
+        grid.style.gridTemplateRows = `repeat(${rowsNumber}, 1fr)`;
+        grid.append(div);
+      })
 
     </script>
   </body>
